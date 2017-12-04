@@ -190,12 +190,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1027967939}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0.72070634, z: 0, w: 0.6932406}
+  m_LocalPosition: {x: 0, y: 0.82, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 2119510469}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1027967944
 MonoBehaviour:
@@ -363,17 +363,17 @@ GameObject:
   m_Component:
   - component: {fileID: 2119510469}
   - component: {fileID: 2119510468}
-  - component: {fileID: 2119510467}
   - component: {fileID: 2119510464}
   - component: {fileID: 2119510466}
   - component: {fileID: 2119510465}
+  - component: {fileID: 2119510467}
   m_Layer: 0
   m_Name: PlayerWithPhysics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!54 &2119510464
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -387,7 +387,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &2119510465
 MonoBehaviour:
@@ -400,7 +400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d62f4aff900918b4f81e885c09ca110f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 20
+  force: 50
   rb: {fileID: 2119510464}
 --- !u!23 &2119510466
 MeshRenderer:
@@ -461,13 +461,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2119510463}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.77, y: 0.5, z: -1.26}
+  m_LocalRotation: {x: -0, y: 0.72070634, z: -0, w: 0.6932406}
+  m_LocalPosition: {x: 1.826, y: 0.5, z: -0.392}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1027967943}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 92.226006, z: 0}
 --- !u!1 &2124356505
 GameObject:
   m_ObjectHideFlags: 0

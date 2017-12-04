@@ -7,11 +7,11 @@ public class KeyboardControlWithPhysics : MonoBehaviour {
     public float force = 5.0f;
     public Rigidbody rb;
 	
-	void Update () {
+	void FixedUpdate () {
         if (Input.GetKey(KeyCode.UpArrow))
         {
             print("up");
-            rb.AddForce(Vector3.forward * force);
+            rb.AddRelativeForce(Vector3.forward * force);
         }
 
         if (Input.GetKey(KeyCode.DownArrow))
