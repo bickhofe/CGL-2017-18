@@ -11,12 +11,12 @@ public class CollectPill : MonoBehaviour {
         rb = GetComponent<Rigidbody>();
     }
 	
-	void Update () {
+	void FixedUpdate () {
         //move
-        if (Input.GetKey(KeyCode.UpArrow))    rb.AddForce(Vector3.forward * force);
-        if (Input.GetKey(KeyCode.DownArrow))  rb.AddForce(Vector3.back * force);
-        if (Input.GetKey(KeyCode.LeftArrow))  rb.AddForce(Vector3.left * force);
-        if (Input.GetKey(KeyCode.RightArrow)) rb.AddForce(Vector3.right * force); 
+        if (Input.GetKey(KeyCode.UpArrow))    rb.AddForce(Vector3.forward * force * Time.deltaTime);
+        if (Input.GetKey(KeyCode.DownArrow))  rb.AddForce(Vector3.back * force * Time.deltaTime);
+        if (Input.GetKey(KeyCode.LeftArrow))  rb.AddForce(Vector3.left * force * Time.deltaTime);
+        if (Input.GetKey(KeyCode.RightArrow)) rb.AddForce(Vector3.right * force * Time.deltaTime);
     }
 
     //trigger
@@ -24,16 +24,16 @@ public class CollectPill : MonoBehaviour {
     {
         print("Enter: " + collider.gameObject.name);
 
-        if (collider.gameObject.name == "Pill")
-        {
-            Destroy(collider.gameObject);
-        }
-
-        //if (collider.gameObject.tag == "Pill")
+        //if (collider.gameObject.name == "Pill")
         //{
-        //    print("Pill collected");
         //    Destroy(collider.gameObject);
         //}
+
+        if (collider.gameObject.tag == "Pill")
+        {
+            print("Pill collected");
+            Destroy(collider.gameObject);
+        }
     }
 
 

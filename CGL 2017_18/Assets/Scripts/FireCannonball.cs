@@ -16,8 +16,12 @@ public class FireCannonball : MonoBehaviour {
 
         if (Input.GetMouseButtonDown(0))
         {
-            GameObject NewCannonball = Instantiate(Cannonball, transform.position + Vector3.forward * 1f, Quaternion.identity);
-            NewCannonball.GetComponent<Rigidbody>().AddForce(Vector3.forward * CannonPower);
+            GameObject NewCannonball = Instantiate(Cannonball, transform.position + Vector3.forward*1f, Quaternion.identity);
+            if (NewCannonball.GetComponent<Rigidbody>() != null)
+            {
+                NewCannonball.GetComponent<Rigidbody>().AddForce(Vector3.forward * CannonPower);
+            }
+            
         }
 
     }

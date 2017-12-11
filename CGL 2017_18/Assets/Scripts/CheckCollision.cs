@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class CheckCollision : MonoBehaviour {
 
+    public float life = 100;
     public float force = 20.0f;
     Rigidbody rb;
+
+    bool alive = true;
 
     void Start () {
         rb = GetComponent<Rigidbody>();
     }
 	
 	void Update () {
+
         //move
         if (Input.GetKey(KeyCode.UpArrow))    rb.AddForce(Vector3.forward * force);
         if (Input.GetKey(KeyCode.DownArrow))  rb.AddForce(Vector3.back * force);
@@ -31,11 +35,19 @@ public class CheckCollision : MonoBehaviour {
     void OnTriggerEnter(Collider collider)
     {
         print("Enter: " + collider.gameObject.name);
+
+       
     }
 
     void OnTriggerStay(Collider collider)
     {
         print("Stay: " + collider.gameObject.name);
+        if (collider.gameObject.name == "Zone")
+        {
+            print("hello");
+            //life--;
+            life-=1;
+        }
     }
 
     void OnTriggerExit(Collider collider)
