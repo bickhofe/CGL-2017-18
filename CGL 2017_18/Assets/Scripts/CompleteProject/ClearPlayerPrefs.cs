@@ -11,4 +11,11 @@ public class ClearPlayerPrefs : MonoBehaviour {
             print("all scores cleared!");
         }
 	}
+
+    public void Clear()
+    {
+        PlayerPrefs.DeleteAll();
+        //PlayerPrefs.DeleteKey("Score");
+        print("all scores cleared!");
+    }
 }

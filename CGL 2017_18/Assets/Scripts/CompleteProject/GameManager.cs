@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour {
                 TxtGameOver.SetActive(true);
 
                 //access othet scripts and write score
-                GetComponent<WritePlayerPrefs>().WriteScore(score);
+                if (score > PlayerPrefs.GetInt("Score")) GetComponent<WritePlayerPrefs>().WriteScore(score);
 
                 //delay
                 Invoke("GameOver", endGameDelay);

@@ -11,7 +11,7 @@ public class KeyboardControlWithPhysics : MonoBehaviour {
         if (Input.GetKey(KeyCode.UpArrow))
         {
             print("up");
-            rb.AddRelativeForce(Vector3.forward * force);
+            rb.AddForce(Vector3.forward * force);
         }
 
         if (Input.GetKey(KeyCode.DownArrow))
