@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class CollectPill : MonoBehaviour {
 
+    public GameManager GameScript;
+    public int pillScore = 50;
+
+    public AudioSource Audio;
+    public AudioClip PillSound;
+
     public float force = 20.0f;
     Rigidbody rb;
 
@@ -24,14 +30,17 @@ public class CollectPill : MonoBehaviour {
     {
         print("Enter: " + collider.gameObject.name);
 
-        //if (collider.gameObject.name == "Pill")
-        //{
-        //    Destroy(collider.gameObject);
-        //}
-
-        if (collider.gameObject.tag == "Pill")
+        if (collider.gameObject.tag == "Pill" && !GameScript.gameOver)
         {
             print("Pill collected");
+            GameScript.score += pillScore;
+
+            GameScript.GetComponent<SpawnObject>().SpawnPill();
+
+            //play sound
+            Audio.clip = PillSound;
+            Audio.Play();
+
             Destroy(collider.gameObject);
         }
     }
