@@ -6,11 +6,17 @@ public class SpawnObject : MonoBehaviour {
 
     public GameObject Pill;
     public GameObject Enemy;
+    public Transform PillContainer;
 
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.Space))
         {
             SpawnPill();
+        }
+
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            CleanupPills();
         }
 
         //if (Input.GetKeyDown(KeyCode.E))
@@ -23,6 +29,20 @@ public class SpawnObject : MonoBehaviour {
     public void SpawnPill()
     {
         Vector2 RandomPosition = Random.insideUnitCircle * 4;
-        Instantiate(Pill, new Vector3(RandomPosition.x, 0.5f, RandomPosition.y), Quaternion.identity);
+        GameObject newPill = Instantiate(Pill, new Vector3(RandomPosition.x, 0.5f, RandomPosition.y), Quaternion.identity);
+        newPill.transform.parent = PillContainer;
     }
+
+    public void CleanupPills()
+    {
+        print("cleanup");
+
+        foreach (Transform obj in PillContainer)
+        {
+            Destroy(obj.gameObject);
+        }
+
+    }
+
+
 }
