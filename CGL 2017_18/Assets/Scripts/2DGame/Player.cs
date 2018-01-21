@@ -11,7 +11,6 @@ public class Player : MonoBehaviour {
     public bool isFalling;
     public Animator Anim;
 
-
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
@@ -22,6 +21,7 @@ public class Player : MonoBehaviour {
         move = Input.GetAxis("Horizontal");
         Anim.SetFloat("speed", rb.velocity.x);
         print(rb.velocity.y);
+
         if (rb.velocity.y <= 0) isFalling = true;
         else isFalling = false;
     }
