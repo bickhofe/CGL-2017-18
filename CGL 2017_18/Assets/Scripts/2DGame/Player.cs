@@ -30,6 +30,7 @@ public class Player : MonoBehaviour {
     {
         // if (collision.relativeVelocity.y >= 0) rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         if (isFalling) rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        
     }
 
     void FixedUpdate()
